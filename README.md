@@ -1,4 +1,5 @@
 AI-Powered Port Scanner
+
 A smart and enhanced network port scanner that combines traditional port scanning techniques with machine learning-based risk scoring. This tool scans specified IP addresses and port ranges, identifies open ports and services, extracts multiple features per port, and predicts a risk level with brief descriptions — helping you prioritize security attention efficiently.
 
 Features
