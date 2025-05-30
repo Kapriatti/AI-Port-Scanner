@@ -1,78 +1,124 @@
-AI-Powered Port Scanner
+# AI-Powered Port Scanner
 
-A smart and enhanced network port scanner that combines traditional port scanning techniques with machine learning-based risk scoring. This tool scans specified IP addresses and port ranges, identifies open ports and services, extracts multiple features per port, and predicts a risk level with brief descriptions — helping you prioritize security efforts efficiently.
+An intelligent port scanning tool that not only scans for open ports but also analyzes them using machine learning to assign risk scores. Built for aspiring cybersecurity professionals and ethical hackers, this project demonstrates practical skills in network scanning, threat analysis, and AI-driven risk assessment.
 
+---
 
-Features
+## 🔍 Features
 
-Customizable IP address and port range scanning
+- **Multi-threaded Port Scanning:** Quickly scans target IPs for open ports.
+- **Service Detection:** Identifies services running on open ports.
+- **Feature Extraction:** Gathers 10+ characteristics per port (e.g., banner data, known vulnerabilities, common usage).
+- **ML-Based Risk Scoring:** Trained machine learning model predicts risk level (Low, Medium, High) for each open port.
+- **JSON Output:** Clean output with port number, service name, and risk score.
 
-Multi-feature extraction per port (10+ features for detailed analysis)
+---
 
-Machine learning-based risk scoring trained on known vulnerabilities and common port risks
+## 📁 Project Structure
 
-Human-readable output with open port info and risk levels
-
-Modular, easy-to-extend Python codebase
-
-
-Why This Scanner is Unique
-
-Traditional port scanners simply report whether ports are open or closed. This project adds an AI-powered layer that assesses potential security risks for each detected open port using a trained machine learning model. This helps you:
-
-Quickly identify ports that may require urgent attention
-
-Understand potential risk levels with concise explanations
-
-Enhance your network security auditing beyond basic port detection
-
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/Kapriatti/AI-Port-Scanner.git
-cd AI-Port-Scanner
-
-(Optional) Create and activate a virtual environment:
-
-python -m venv venv
-source venv/bin/activate       # On Windows: venv\Scripts\activate
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-
-Usage
-
-Run the port scanner module:
- 
-python -m scanner.port_scanner
-
-You will be prompted to enter:
-
-The IP address or hostname to scan
-
-The port range (e.g., 20-100)
-
-Example output:
-
-[OPEN] Port 53 (domain) → Risk Level: 2 - Medium risk: Moderately sensitive port, sometimes exploited.
-[OPEN] Port 80 (http) → Risk Level: 2 - Medium risk: Moderately sensitive port, sometimes exploited.
-
-Project Structure
-
+```
 AI-Port-Scanner/
 ├── ai_model/
-│   └── train_model.py          # Script to train the machine learning model
+│   └── train_model.py            # Script to train ML model on labeled port data
 ├── scanner/
-│   └── port_scanner.py         # Main port scanner script
+│   └── port_scanner.py           # Main scanning script with risk scoring
 ├── utils/
-│   ├── feature_extractor.py    # Feature extraction logic
-│   └── risk_levels.json        # Risk level descriptions and explanations
-├── requirements.txt            # Python dependencies
-├── README.md
-└── .gitignore
+│   ├── feature_extractor.py      # Extracts features per port for ML input
+│   └── risk_levels.json          # Maps port ranges or services to baseline risk levels
+├── README.md                     # Project documentation (this file)
+├── requirements.txt              # Dependencies list
+└── .gitignore                    # Git ignore rules
+```
 
+---
 
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Kapriatti/AI-Port-Scanner.git
+cd AI-Port-Scanner
+```
+
+### 2. (Optional) Create and Activate a Virtual Environment
+
+```bash
+python -m venv venv
+# On Windows
+venv\Scripts\activate
+# On Mac/Linux
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Train the Machine Learning Model
+
+```bash
+python ai_model/train_model.py
+```
+
+### 5. Run the Port Scanner
+
+```bash
+python scanner/port_scanner.py
+```
+
+---
+
+## 📌 Example Output
+
+```json
+[
+  {
+    "ip": "192.168.1.10",
+    "port": 22,
+    "service": "ssh",
+    "features": {...},
+    "risk_score": "High"
+  },
+  {
+    "ip": "192.168.1.10",
+    "port": 80,
+    "service": "http",
+    "features": {...},
+    "risk_score": "Low"
+  }
+]
+```
+
+---
+
+## 🧠 ML Model Details
+
+- **Model Type:** RandomForestClassifier (or similar)
+- **Training Data:** Simulated ports with labeled risk levels
+- **Input Features:** Port number, service name, known CVEs, encryption usage, popularity, etc.
+- **Output:** Predicted risk score (Low, Medium, High)
+
+---
+
+## 🛡️ Use Cases
+
+- Educational project to demonstrate ML + cybersecurity
+- Internal network vulnerability scanning
+- SOC analyst training
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 👤 Author
+
+**Kapriatti**  
+Cybersecurity Student | Developer | Builder  
+GitHub: [Kapriatti](https://github.com/Kapriatti)
