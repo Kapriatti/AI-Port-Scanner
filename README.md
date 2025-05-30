@@ -1,6 +1,6 @@
 # AI-Powered Port Scanner
 
-An intelligent port scanning tool that not only scans for open ports but also analyzes them using machine learning to assign risk scores. Built for aspiring cybersecurity professionals and ethical hackers, this project demonstrates practical skills in network scanning, threat analysis, and AI-driven risk assessment.
+An intelligent port scanning tool that not only scans for open ports but also analyzes them using machine learning to assign risk scores. this project demonstrates practical skills in network scanning, threat analysis, and AI-driven risk assessment.
 
 ---
 
