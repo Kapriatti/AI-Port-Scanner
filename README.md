@@ -1,29 +1,25 @@
 AI-Powered Port Scanner
-
-A smart and enhanced network port scanner that combines traditional port scanning techniques with machine learning-based risk scoring. This tool scans specified IP addresses and port ranges, identifies open ports and services, extracts multiple features per port, and predicts a risk level with brief descriptions — helping you prioritize security attention efficiently.
+A smart and enhanced network port scanner that combines traditional port scanning techniques with machine learning-based risk scoring. This tool scans specified IP addresses and port ranges, identifies open ports and services, extracts multiple features per port, and predicts a risk level with brief descriptions — helping you prioritize security efforts efficiently.
 
 Features
-Customizable IP and port range scanning
+Customizable IP address and port range scanning
 
 Multi-feature extraction per port (10+ features for detailed analysis)
 
-Machine Learning risk scoring trained on known vulnerabilities and common port risks
+Machine learning-based risk scoring trained on known vulnerabilities and common port risks
 
-Readable output with port info and risk levels
+Human-readable output with open port info and risk levels
 
-Easy-to-extend modular structure
-
-Built with Python
+Modular, easy-to-extend Python codebase
 
 Why This Scanner is Unique
-
-Traditional port scanners only report open/closed ports. This project adds an AI-powered layer that assesses potential security risks of detected open ports using a trained ML model. It helps you:
+Traditional port scanners simply report whether ports are open or closed. This project adds an AI-powered layer that assesses potential security risks for each detected open port using a trained machine learning model. This helps you:
 
 Quickly identify ports that may require urgent attention
 
-Understand potential risk levels with brief explanations
+Understand potential risk levels with concise explanations
 
-Enhance your network security auditing beyond simple port detection
+Enhance your network security auditing beyond basic port detection
 
 Installation
 
@@ -35,7 +31,7 @@ cd AI-Port-Scanner
 (Optional) Create and activate a virtual environment:
 
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate       # On Windows: venv\Scripts\activate
 
 Install dependencies:
 
@@ -44,10 +40,13 @@ pip install -r requirements.txt
 Usage
 
 Run the port scanner module:
-
+ 
 python -m scanner.port_scanner
+
 You will be prompted to enter:
+
 The IP address or hostname to scan
+
 The port range (e.g., 20-100)
 
 Example output:
@@ -58,18 +57,15 @@ Example output:
 Project Structure
 
 AI-Port-Scanner/
-│
 ├── ai_model/
-│   └── train_model.py           # Script to train the ML model
-│
+│   └── train_model.py          # Script to train the machine learning model
 ├── scanner/
-│   └── port_scanner.py          # Main scanner script
-│
+│   └── port_scanner.py         # Main port scanner script
 ├── utils/
-│   ├── feature_extractor.py     # Feature extraction logic
-│   └── risk_levels.json         # Risk level descriptions
-│
-├── requirements.txt             # Python dependencies
-├── README.md                   
+│   ├── feature_extractor.py    # Feature extraction logic
+│   └── risk_levels.json        # Risk level descriptions and explanations
+├── requirements.txt            # Python dependencies
+├── README.md
 └── .gitignore
+
 
