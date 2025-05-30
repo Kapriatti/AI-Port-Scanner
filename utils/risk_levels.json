@@ -1,0 +1,5 @@
+{
+  "1": "Low risk: Common port with limited known vulnerabilities.",
+  "2": "Medium risk: Moderately sensitive port, sometimes exploited.",
+  "3": "High risk: Frequently targeted port, high vulnerability."
+}
