@@ -1,37 +1,69 @@
-# 🔍 AI-Powered Port Scanner
+AI-Powered Port Scanner
+A smart and enhanced network port scanner that combines traditional port scanning techniques with machine learning-based risk scoring. This tool scans specified IP addresses and port ranges, identifies open ports and services, extracts multiple features per port, and predicts a risk level with brief descriptions — helping you prioritize security attention efficiently.
 
-An AI-enhanced port scanner that scans common ports on a given IP address, identifies open ports and their services, and uses a machine learning model to assign risk levels based on service type and port number.
+Features
+Customizable IP and port range scanning
 
----
+Multi-feature extraction per port (10+ features for detailed analysis)
 
-## 📌 Features
+Machine Learning risk scoring trained on known vulnerabilities and common port risks
 
-- 🔎 Scans common TCP ports and detects open ones
-- 🧠 Uses a trained ML model (Random Forest) to assign a **risk level** (Low/Medium/High)
-- 🗂️ Outputs readable scan reports
-- 💡 Teaches fundamentals of port scanning and basic threat modeling
-- 📁 Beginner-friendly folder and file structure
+Readable output with port info and risk levels
 
----
+Easy-to-extend modular structure
 
-## 🧠 How It Works
+Built with Python
 
-1. The scanner runs a basic TCP port scan on predefined common ports (e.g., 22, 80, 443).
-2. It uses a machine learning model trained on synthetic data (`train_model.py`) to assign risk ratings.
-3. Outputs scan results with human-readable risk levels.
+Why This Scanner is Unique
+Traditional port scanners only report open/closed ports. This project adds an AI-powered layer that assesses potential security risks of detected open ports using a trained ML model. It helps you:
 
----
+Quickly identify ports that may require urgent attention
 
-## ⚙️ Tech Stack
+Understand potential risk levels with brief explanations
 
-- Python 3
-- `socket` for port scanning
-- `scikit-learn` + `joblib` for machine learning
-- `nmap` (optional) for advanced scanning
-- JSON for storing and using risk rules
+Enhance your network security auditing beyond simple port detection
 
----
+Installation
 
-## 📁 Project Structure
-<pre> AI-Port-Scanner/ │ ├── README.md ← Project overview ├── requirements.txt ← Python dependencies │ ├── ai_model/ │ ├── train_model.py ← ML training script │ └── model.pkl ← Trained ML model (auto-generated) │ ├── scanner/ │ └── port_scanner.py ← Main port scanning script │ ├── utils/ │ └── risk_levels.json ← Risk level definitions │ ├── reports/ │ └── sample_scan_report.txt← Sample scan result </pre>
+Clone the repository:
+git clone https://github.com/Kapriatti/AI-Port-Scanner.git
+cd AI-Port-Scanner
+
+(Optional) Create and activate a virtual environment:
+
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+Install dependencies:
+pip install -r requirements.txt
+
+Usage
+
+Run the port scanner module:
+python -m scanner.port_scanner
+You will be prompted to enter:
+The IP address or hostname to scan
+The port range (e.g., 20-100)
+
+Example output:
+
+[OPEN] Port 53 (domain) → Risk Level: 2 - Medium risk: Moderately sensitive port, sometimes exploited.
+[OPEN] Port 80 (http) → Risk Level: 2 - Medium risk: Moderately sensitive port, sometimes exploited.
+
+Project Structure
+AI-Port-Scanner/
+│
+├── ai_model/
+│   └── train_model.py           # Script to train the ML model
+│
+├── scanner/
+│   └── port_scanner.py          # Main scanner script
+│
+├── utils/
+│   ├── feature_extractor.py     # Feature extraction logic
+│   └── risk_levels.json         # Risk level descriptions
+│
+├── requirements.txt             # Python dependencies
+├── README.md                   
+└── .gitignore
 
